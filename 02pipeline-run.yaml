@@ -1,0 +1,11 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  generateName: hyunjin-kim-yaml-lint-pipeline-
+spec:
+  pipelineRef:
+    name: hyunjin-kim-yaml-lint-pipeline
+  workspaces:
+    - name: pipeline-shared-data
+      persistentVolumeClaim:
+        claimName: hyunjin-kim-pvc
